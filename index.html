@@ -1,58 +1,38 @@
 <html>
   <head>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-geo.js"></script>
-  </head>
-  <body style='margin : 0px; overflow: hidden;'>
-    <a-scene
-      vr-mode-ui="enabled: false"
-      renderer="logarithmicDepthBuffer: true"
-      arjs='sourceType: webcam; debugUIEnabled: false;'>
-      
-    <a-nft
-        type='nft'
-        url='https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex-image/trex-image-nft.json'
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5">
-    </a-nft>
-    
-    <a-entity
-        position="0 0 0"
-        rotation="0 0 0"
-        scale="0.5 0.5 0.5"
-        geo-object="latitude: 52.11966044801235; longitude: 11.630493955096858;">
-        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
-    </a-entity>
-    <a-entity
-        position="0 0 0"
-        rotation="0 0 0"
-        scale="0.5 0.5 0.5"
-        geo-object="latitude: 52.12068217698081; longitude: 11.631298994360781;">
-        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
-    </a-entity>
-    <a-entity
-        position="0 0 0"
-        rotation="0 0 0"
-        scale="0.5 0.5 0.5"
-        geo-object="latitude: 52.11966044801235; longitude: 11.630493955096858;">
-        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
-    </a-entity>
-    <a-entity
-        position="0 0 0"
-        rotation="0 0 0"
-        scale="0.5 0.5 0.5"
-        geo-object="latitude: 52.12068217698081; longitude: 11.631298994360781;">
-        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
-    </a-entity>
-    <a-entity
-        position="0 0 0"
-        rotation="0 0 0"
-        scale="0.5 0.5 0.5"
-        geo-object="latitude: 52.11966044801235; longitude: 11.630493955096858;">
-        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
-    </a-entity>
-    </a-scene>
-  </body>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-geo.js"></script><!DOCTYPE html>
+<html>
+    <style>
+        #ar-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="ar-container">
+        <a-scene
+            embedded
+            arjs="sourceType: webcam; debugUIEnabled: false;"
+            vr-mode-ui="enabled: false;"
+        >
+            <a-marker
+                type="geo"
+                gps-entity-place="latitude: 51.754660; longitude: 11.959905;"
+            >
+                <a-entity
+                    scale="0.5 0.5 0.5"
+                    fbx-model="url(Agri_PV_V3.fbx)"
+                ></a-entity>
+            </a-marker>
+            
+            <a-entity camera></a-entity>
+        </a-scene>
+    </div>
+</body>
 </html>
