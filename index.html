@@ -1,18 +1,58 @@
-// You can get the Hiro image that this demo needs here: https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg
-// Just load it up on your phone or print it out and point your camera at the image and a little blue-green box should appear!
+<html>
+  <head>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-geo.js"></script>
+  </head>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene
+      vr-mode-ui="enabled: false"
+      renderer="logarithmicDepthBuffer: true"
+      arjs='sourceType: webcam; debugUIEnabled: false;'>
 
-a-scene(embedded='', arjs='sourceType: webcam;' physics='debug: true; friction: 0.1; restitution: 1.25; gravity: -0.8;')
-  a-marker-camera(preset='hiro')
-  
-  a-plane(static-body rotation="-90 0 0" scale="3 3 3" color='blue')
-  - var n = 0;
-  - zCoord = 0;
-  while n < 5
-    - var xCoord = (-3 + (n * 1.25))
-    - var pos = xCoord +' 0 ' + zCoord
-    //- a-gltf-model(dynamic-body src="https://andrescuervo.github.io/assets/ghostie/ghostie.gltf" scale="0.25 0.25 0.25" position = pos animation__move="property: position; from: " + pos +"; to: " + xCoord + " -1 " + zCoord +"; dur: " + (n * 500) + "; dir: alternate; easing: linear; loop: true;")
-    a-gltf-model(dynamic-body src="https://andrescuervo.github.io/assets/ghostie/ghostie.gltf" scale="0.25 0.25 0.25" position = pos)
-    - n++
-// GLTF model from: https://ten-thousand-models.appspot.com/detail.html?file_id=40746
-             
-             
+    <a-nft
+        type='nft'
+        url='https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex-image/trex-image-nft.json'
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5">
+    </a-nft>
+
+    <a-entity
+        position="0 0 0"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        geo-object="latitude: 52.11966044801235; longitude: 11.630493955096858;">
+        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
+    </a-entity>
+    <a-entity
+        position="0 0 0"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        geo-object="latitude: 52.1199632; longitude: 11.6293609;">
+        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
+    </a-entity>
+    <a-entity
+        position="0 0 0"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        geo-object="latitude: 52.1199587; longitude: 11.6297384;">
+        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
+    </a-entity>
+    <a-entity
+        position="0 0 4"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        geo-object="latitude: 52.1199632; longitude: 11.6293609;">
+        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
+    </a-entity>
+    <a-entity
+        position="0 0 6"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        geo-object="latitude: 52.1199587; longitude: 11.6297384;">
+        <a-obj-model src="arrow_hsa.obj"></a-obj-model>
+    </a-entity>
+    </a-scene>
+  </body>
+</html>
